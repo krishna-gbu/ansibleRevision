@@ -1,0 +1,28 @@
+- hosts: all
+  tasks: 
+  - name: "install web server package"
+    package: 
+      name: "httpd"
+      state: present
+  - name: "copy html file"
+    copy: 
+       dest: "/var/www/html"
+       src: "web.html"
+  
+  - name: "enable service httpd"
+    service: 
+       name: "httpd"
+       state: started
+       enabled: yes
+  
+  - name: reboot the machine with all defaults
+    reboot:
+       reboot_timeout: 3600
+
+  - name: "enable firewalld"
+    firewalld: 
+       immediate: yes
+       port: "80/tcp"
+       state: enabled
+       permanent: yes
+ 

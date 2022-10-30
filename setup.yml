@@ -1,0 +1,8 @@
+# ansible all -m setup -a "filter=ansible_distribution"
+- name: "host all"
+  hosts: all 
+  tasks:
+  - name: 'print all information of host os with debug from gathering facts'
+    debug: 
+        var: ansible_memfree_mb
+

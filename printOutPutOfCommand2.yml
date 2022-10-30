@@ -1,0 +1,9 @@
+- name: 'all hosts'
+  hosts: all
+
+  tasks:
+  - name: 'command running pwd'
+    command: pwd
+    register: x
+  - debug:
+       var: x.stdout_lines

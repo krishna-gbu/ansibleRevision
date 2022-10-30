@@ -1,0 +1,17 @@
+- name: 'all hosts'
+  hosts: all
+  vars: 
+      x:
+       name: 'krish'
+       phone: '0987654321'
+       age: 25
+  tasks:
+  - name: 'print dictonary'
+    debug:
+       var: x
+  - name: 'print dictonary'
+    debug:
+       var: x['name']
+  - name: 'print dictonary'
+    debug:
+       var: x.phone

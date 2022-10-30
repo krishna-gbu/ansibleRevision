@@ -1,0 +1,9 @@
+- name: 'all hosts'
+  hosts: all
+  
+  tasks: 
+  - name: 'command running ls'
+    command: ls
+    register: x
+  - debug: 
+       var: x

@@ -1,0 +1,15 @@
+- name: 'all hosts'
+  hosts: all
+  
+  tasks: 
+  - name: "debug"
+    debug:
+        msg: "this is test print" 
+
+- name: "localhost"
+  hosts: all
+  tasks:
+  - name: 'stop httdp'
+    service: 
+       name: "httpd"
+       state: stopped   

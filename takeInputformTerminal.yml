@@ -1,0 +1,20 @@
+# https://docs.ansible.com/ansible/2.9/user_guide/playbooks_prompts.html
+- name: 'take input'
+  hosts: all
+  vars: 
+         x: 10
+         y: 20
+  vars_prompt: 
+           - name: z
+             prompt: 'what is your name'
+             private: no
+           - name: y
+             prompt: 'what is your age'
+             private: no
+  tasks:
+  - name: 'print intput from terminal'
+    debug: 
+        var: z 
+  - name: 'print intput from terminal'
+    debug: 
+        var: y 
