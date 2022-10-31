@@ -1,0 +1,12 @@
+- name: "all  hosts"
+  hosts: all
+  vars_files: 
+  - webvar.yml
+  tasks:
+  - name: "install web http"
+    package: 
+       name: "{{web_pack}}"
+       state: present
+  - name: "print variable of webvar.yml"
+    debug: 
+         var: x

@@ -1,0 +1,9 @@
+- name: "all hosts"
+  hosts: all
+  tasks:
+  - command: "mkdir /temp/os"
+    ignore_errors: true
+
+  - name: "install web pack"
+    shell: ping -c 1 -w 2 google.com
+

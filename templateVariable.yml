@@ -1,0 +1,17 @@
+- name: "host file"
+  hosts: all
+  vars_files:
+  - webvar2.yml
+  tasks: 
+  - name: "install httpd"
+    package: 
+         name: "{{web_pack}}"
+         state: present
+  - name: "copy web page bcoz server already running"
+    template:
+         dest: "/var/www/html"
+         src: first.html
+  - name: "print variable from webvar2.yml"
+    debug: 
+       var: y
+      

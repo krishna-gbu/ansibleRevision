@@ -1,0 +1,41 @@
+- name: "all host"
+  hosts: all
+  tasks:
+  - name: "http install"
+    package:
+        name: httpd
+        state: present
+  - name: "copy index.html to server"
+    copy: 
+       dest: "/var/www/html/"
+       src: index.html
+    notify: "web page change"
+   
+  - name: "service start"
+    service: 
+        name: httpd
+        state: started
+  handlers:
+   - name: "web page change"
+     service: 
+        name: "httpd"
+        state: restarted 
+
+
+#asks:
+# name: Template configuration file
+# ansible.builtin.template:
+#   src: template.j2
+#   dest: /etc/foo.conf
+# notify:
+#   - Restart apache
+#   - Restart memcached
+#andlers:
+#  - name: Restart memcached
+#    ansible.builtin.service:
+#      name: memcached
+#      state: restarted
+#  - name: Restart apache
+#    ansible.builtin.service:
+#      name: apache
+#      state: restarted

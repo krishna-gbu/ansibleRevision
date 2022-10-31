@@ -1,0 +1,8 @@
+- name: 'download file form url'
+  hosts: all
+  tasks:
+
+  - name: Download file from a file path
+    get_url:
+      url: https://static.toiimg.com/photo/msid-74966811/74966811.jpg 
+      dest: /home/ec2-user

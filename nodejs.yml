@@ -1,0 +1,7 @@
+- name: 'install nodejs'
+  hosts: all
+  tasks:
+  - name: install the latest version of Apache
+    dnf:
+      name: nodejs
+      state: latest
