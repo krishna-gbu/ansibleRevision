@@ -1,0 +1,70 @@
+   15  git status => check  all status
+   16  git ls-files => check file in stage area
+   17  git show => check commit data, area
+   18  git log => check all commit 
+   21  git commit a.txt 
+   24  git commit -m 'a'
+   29  git commit -m 'a' a.txt 
+   36  git add d.txt 
+   45  git restore --staged d.txt => remove file from stage area 
+   50  git show  fc55a => show with specific commit id
+   55  git show head => head commit id
+   56  git show head~1 => head commit se ek pahle wala commit
+   57  git show head~2
+   99  git diff 0226 222d => check diffrence b/w two commit
+  104  git diff  222d  be00 
+  113  git log --oneline =>check log in one line
+  167  git init thirdproj => create folder , init git and create master/main branch
+
+  252  git cat-file -p d8733 => check comment content
+  253  git cat-file -p d8733
+  303  git branch => check branch
+  304  git branch -a => check all branch
+  325  git branch dev1 => create branch dev2(name)
+  332  git checkout dev1 => goto branch dev1
+  382  git merge dev1 => goto main/master branch and merge branch 
+  385  git branch -d dev1 => delete branch 
+  389  git branch --show-current => check current branch 
+  390  ssh-keygen.exe 
+  391  cd ~/.ssh
+  396  cat id_rsa.pub => paste github ssh setup
+  398  ssh -T git@github.com => check ssh authentication
+  418  git remote add krish git@github.com:krishna-gbu/gitrevision.git=>add location(krish)
+  419  git remote =>check location of repo(github)
+  422  git push --set-upstream krish | main
+  423  git push
+  426  git remote show krish =>check detail location
+  437  git remote  remove krish
+  439  git remote add origin git@github.com:krishna-gbu/gitrevision.git=>change location name
+  440  git push
+  441  git push --set-upstream origin main
+  442  git checkout -b dev1 =>push dev1 branch
+  443  git branch
+  445  git push -u origin dev1
+  215  git reset --help
+  216  git reset head~1 => go to specific commit 
+  406  git branch -d dev1=>delete branch dev1 
+  407  git branch -D dev1 =>delete branch dev1 force
+  408  git checkout bug-fix =>
+  409  git checkout main =>goto main branch and merge
+  410  git merge bug-fix =>merge bug-fix
+  445  git commit --amend -m 'amend comment'=>diffrent type of  branch 
+  450  git reflog => check detail of log
+  467  git reflog head@{5} => check detail of commit
+ 
+ =========delete waste nodes=================>
+  471  git reflog expire --expire-unreachable=now
+  472  git reflog expire --expire-unreachable=now --all
+  473  git gc --prune=now
+  ===============>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ 
+  504  git reset --soft head~1 => goto specific commit but not delete
+  511  git reset --soft 3b3f6ea
+  514  git reset --hard head~1 => goto specifig commit but delete
+  571  git rebase main => agar hum kai branch me kam kr rahe hai aur hum ko main branch ka code chahiye to 'rebase' use kro 
+  600  git stash save 'first' => agr code ko save krna ho to bina add aur commit ke
+  603  git stash list=>check list stash
+  604  git stash show stash@{0}=> goto specific stash
+  606  git stash apply stash@{0}
+  607  git stash drop stash@{0}
+  616  git cherry-pick comit_id => agr specific commit ko merge krna hai to
