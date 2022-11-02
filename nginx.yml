@@ -1,0 +1,12 @@
+- name: "setup lb using nginx"
+  hosts: all
+  tasks:
+  - name: "install nginx"
+    package:
+       name: nginx
+       state: present
+    register: lbinstall
+
+  - debug:
+        var: lbinstall
+    

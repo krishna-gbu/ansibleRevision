@@ -1,0 +1,12 @@
+- name: "host name"
+  hosts: all
+  tasks: 
+  - name: "install httpd"
+    package: 
+       name: httpd
+       state: present
+  - name: "copy to httpd"
+    template:
+        dest: "/var/www/html/"
+        src: template.html
+  
